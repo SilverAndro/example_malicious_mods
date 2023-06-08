@@ -6,6 +6,8 @@ This repo contains several jars who's purpose is for testing various Minecraft s
 end goal is to drop the [EICAR test file](https://en.wikipedia.org/wiki/EICAR_test_file) on the
 users desktop when run, or some similar goal.
 
+If the goal isnt just to get the test file on the desktop, there will be a `README.md` file in the module directory saying what it tries to do.
+
 ## Will this infect my computer?
 
 Nope, these are *example* programs that shouldn't do anything but make your antivirus complain. 
