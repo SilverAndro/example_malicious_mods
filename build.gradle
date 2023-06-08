@@ -1,0 +1,46 @@
+plugins {
+    id("java")
+}
+
+subprojects {
+    plugins.apply("java")
+
+    project.archivesBaseName = "ExampleMaliciousMod_" + project.name
+
+    if (project.name != "Common") {
+        dependencies {
+            implementation(project(":Common"))
+        }
+    }
+
+    project.tasks.processResources {
+        inputs.property "modid", project.archivesBaseName.toLowerCase()
+        inputs.property "version", project.version
+        inputs.property "name", "Example Malicious Mod - " + project.name
+
+        filesMatching("fabric.mod.json") {
+            expand "modid": project.archivesBaseName.toLowerCase(),
+                    "version": project.version,
+                    "name": "Example Malicious Mod - " + project.name
+        }
+    }
+}
+
+tasks.register("copyAllBuiltJars") { task ->
+    subprojects {
+        task.dependsOn(project.tasks.build)
+    }
+    doLast {
+        subprojects.forEach { sproject ->
+            if (sproject.name != "Common") {
+                println("Copying from " + sproject)
+                copy {
+                    from sproject.layout.buildDirectory.dir("libs")
+                    into rootProject.layout.buildDirectory.dir("outputJars")
+                }
+            }
+        }
+    }
+}
+
+tasks.build.finalizedBy(tasks.named("copyAllBuiltJars"))

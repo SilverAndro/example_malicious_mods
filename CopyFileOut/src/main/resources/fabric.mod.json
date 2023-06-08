@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "${modid}",
+  "version": "${version}",
+  "name": "Example Malicious Mod - Copy File Out",
+  "authors": [
+    "SilverAndro"
+  ],
+  "entrypoints": {
+    "main": [
+      "dev.silverandro.malicious_mods.copy_out.CopyFileOut"
+    ]
+  }
+}
