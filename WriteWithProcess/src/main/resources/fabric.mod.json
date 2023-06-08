@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "${modid}",
+  "version": "${version}",
+  "name": "Example Malicious Mod - Write With Process",
+  "authors": [
+    "SilverAndro"
+  ],
+  "entrypoints": {
+    "main": [
+      "dev.silverandro.malicious_mods.write_with_process.WriteWithProcess"
+    ]
+  }
+}

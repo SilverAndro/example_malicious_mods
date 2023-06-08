@@ -4,4 +4,5 @@ include "SimpleDrop"
 include "StringObfSimpleDrop"
 include "CfnSimpleDrop"
 include "CopyFileOut"
+include "WriteWithProcess"
 
