@@ -4,7 +4,7 @@
 
 This repo contains several jars who's purpose is for testing various Minecraft sandboxes. Their
 end goal is to drop the [EICAR test file](https://en.wikipedia.org/wiki/EICAR_test_file) on the
-users desktop when run.
+users desktop when run, or some similar goal.
 
 ## Will this infect my computer?
 
